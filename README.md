@@ -35,7 +35,19 @@ A professional Flutter application featuring task management with reminders, new
 
 ## Screenshots
 
-*Screenshots will be added after running the app*
+Below are app screenshots (images are located in the `screen_shots/` folder):
+
+![Screenshot 2025-12-21 14:05:02](screen_shots/Screenshot_20251221-140502.png)
+
+![Screenshot 2025-12-21 14:05:06](screen_shots/Screenshot_20251221-140506.png)
+
+![Screenshot 2025-12-21 14:05:15](screen_shots/Screenshot_20251221-140515.png)
+
+![Screenshot 2025-12-21 14:05:21](screen_shots/Screenshot_20251221-140521.png)
+
+![Screenshot 2025-12-21 14:05:26](screen_shots/Screenshot_20251221-140526.png)
+
+![Screenshot 2025-12-21 14:05:32](screen_shots/Screenshot_20251221-140532.png)
 
 ## Getting Started
 
