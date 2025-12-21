@@ -7,10 +7,13 @@ plugins {
 
 android {
     namespace = "com.assignmentbtf.assignment_btf"
-    compileSdk = flutter.compileSdkVersion
+    // Updated to 36 to match newer AndroidX library requirements
+    compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
+        // Enable core library desugaring for libraries that require newer Java APIs on older devices
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
@@ -24,8 +27,10 @@ android {
         applicationId = "com.assignmentbtf.assignment_btf"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
+        // Use Kotlin DSL property name 'minSdk' instead of Groovy 'minSdkVersion'
         minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        // Updated targetSdk to 36 to align with compileSdk and dependency requirements
+        targetSdk = 36
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
@@ -37,6 +42,11 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
     }
+}
+
+// Add core-library-desugaring dependency required when isCoreLibraryDesugaringEnabled = true
+dependencies {
+    add("coreLibraryDesugaring", "com.android.tools:desugar_jdk_libs:2.0.3")
 }
 
 flutter {

@@ -1,8 +1,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Permission required on Android 13+ to post notifications -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Allow scheduling exact alarms on Android 12+ so exactAllowWhileIdle works reliably -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <!-- Optional: keep device awake briefly when processing notification alarms -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Optional: allow rescheduling notifications after device reboot -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <application
         android:label="assignment_btf"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <!-- Receiver to reschedule notifications after device reboot or app update -->
+        <receiver
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
         <activity
             android:name=".MainActivity"
             android:exported="true"
