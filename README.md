@@ -199,9 +199,6 @@ Uses **GetX** for reactive state management:
 - Check device notification settings
 - Ensure reminder time is in the future
 
-## License
-
-This project is created for educational purposes.
 
 ## Author
 
